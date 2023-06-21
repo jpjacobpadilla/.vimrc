@@ -31,6 +31,7 @@ Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
 Plug 'mhinz/vim-startify'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -81,6 +82,19 @@ nnoremap <Leader>s :call ToggleSpell()<CR>
 
 "  Make the dotted lines a tiny bit darker
 let g:indentLine_color_term = 238
+
+"  -------------- Vim Git Gutter --------------
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+nmap ) <Plug>(GitGutterNextHunk)
+nmap ( <Plug>(GitGutterPrevHunk)
+
+" Toggle Git Gutter with leader g
+nnoremap <leader>g :GitGutterSignsToggle<CR>
+
+let g:gitgutter_signs = 0
+let g:gitgutter_map_keys = 0
 
 "  -------------- Vim Auto Closing --------------
 " These are the file extensions where this plugin is enabled.
