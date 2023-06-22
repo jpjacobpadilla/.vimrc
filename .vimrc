@@ -17,12 +17,12 @@ call plug#begin('~/.vim/plugged')
 
 " Load plugins
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-buftabline'
@@ -37,11 +37,6 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let mapleader = " "
-
-" NerdTree key bindings
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 " Use <Space> to clear search highlighting and any message already displayed.
 nnoremap <silent> <leader>h :noh<Bar>:echo<CR>
@@ -63,17 +58,16 @@ tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
 " Quit a buffer or terminal
-nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
-tnoremap <leader>q <C-\><C-n>:call QuitOrCloseTerminal()<CR>
 function! QuitOrCloseTerminal()
   quit!
 endfunction
+
+nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
+tnoremap <leader>q <C-\><C-n>:call QuitOrCloseTerminal()<CR>
+
 " Switch buffers using Ctrl-n and Ctrl-p
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprev<CR>
-
-" Open FZF
-nnoremap <Leader>f :FZF<CR>
 
 " Quickly display registers
 nnoremap <Leader>r :reg<CR>
@@ -89,84 +83,6 @@ function! ToggleSpell()
 endfunction
 
 nnoremap <Leader>s :call ToggleSpell()<CR>
-
-"  Make the dotted lines a tiny bit darker
-let g:indentLine_color_term = 238
-
-"  -------------- Vim Git Gutter --------------
-highlight GitGutterAdd    guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-nmap ) <Plug>(GitGutterNextHunk)
-nmap ( <Plug>(GitGutterPrevHunk)
-
-" Toggle Git Gutter with leader g
-nnoremap <leader>g :GitGutterSignsToggle<CR>
-
-let g:gitgutter_signs = 0
-let g:gitgutter_map_keys = 0
-
-"  -------------- Vim Auto Closing --------------
-" These are the file extensions where this plugin is enabled.
-let g:closetag_filenames = '*.html,*.xhtml,*.jsx,*.js,*.tsx'
-let g:closetag_filetypes = '*.html,*.xhtml,*.jsx,*.js,*.tsx'
-
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filenames = ''
-let g:closetag_xhtml_filetypes = ''
-
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-let g:closetag_emptyTags_caseSensitive = 1
-
-" Disables auto-close if not in a "valid" region (based on filetype)
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ 'typescriptreact': 'jsxRegion,tsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
-
-" Shortcut for closing tags, default is '>'
-let g:closetag_shortcut = '>'
-
-" Add > at current position without closing the current tag, default is ''
-let g:closetag_close_shortcut = '<leader>>'
-
-"  -------------- Vim Emmet --------------
-let g:user_emmet_settings = {
-\  'variables': {'lang': 'en', 'charset': 'UTF-8', 'title': 'Document'},
-\  'html': {
-\    'default_attributes': {
-\      'option': {'value': v:null},
-\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
-\    },
-\    'snippets': {
-\      'html:5': "<!DOCTYPE html>\n"
-\              ."<html lang=\"${lang}\">\n"
-\              ."<head>\n"
-\              ."\t<meta charset=\"${charset}\">\n"
-\              ."\t<meta name=\"viewport\" content=\"width=, initial-scale=1.0\">\n"
-\              ."\t<title>${title}</title>\n"
-\              ."</head>\n"
-\              ."<body>\n\n</body>\n"
-\              ."</html>",
-\    },
-\  },
-\}
-
-"  -------------- Vim Startify --------------
-let uname_output = substitute(system('uname -om'), '\n', '', '')
-let uname_output = substitute(uname_output, '\%x00', '', 'g')
-let g:startify_custom_header = [
-        \ '   ' . uname_output
-        \ ]
-
-let g:startify_lists = [
-            \ { 'type': 'files', 'header': ['   Recent Files   '] },
-            \ ]
-
-" Maximum number of MRU entries to show.
-let g:startify_files_number = 5
 
 " Remove trailing white space on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -227,11 +143,6 @@ set splitbelow
 set hidden
 
 " --------------- Color Scheme ---------------
-
-" A horizontal line at the 80 character mark
-" highlight ColorColumn ctermbg=235
-" set colorcolumn=80
-
 " Fix background: https://sunaku.github.io/vim-256color-bce.html
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
@@ -253,6 +164,9 @@ augroup END
 " Change color of misspelled words
 autocmd ColorScheme * highlight SpellBad ctermfg=white ctermbg=red gui=undercurl guifg=white guibg=red
 
+"  Make the dotted lines a tiny bit darker
+let g:indentLine_color_term = 238
+
 " Enable syntax highlighting
 syntax on
 colorscheme dracula
@@ -267,3 +181,85 @@ endfunction
 
 let g:airline_section_b = '%{FugitiveStatusline()} %{GitStatus()}'
 
+"  -------------- Nerd Tree --------------
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"  -------------- Vim Emmet --------------
+let g:user_emmet_settings = {
+\  'variables': {'lang': 'en', 'charset': 'UTF-8', 'title': 'Document'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<meta name=\"viewport\" content=\"width=, initial-scale=1.0\">\n"
+\              ."\t<title>${title}</title>\n"
+\              ."</head>\n"
+\              ."<body>\n\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}
+
+"  -------------- Vim Startify --------------
+let uname_output = substitute(system('uname -om'), '\n', '', '')
+let uname_output = substitute(uname_output, '\%x00', '', 'g')
+let g:startify_custom_header = [
+        \ '   ' . uname_output
+        \ ]
+
+let g:startify_lists = [
+        \ { 'type': 'files', 'header': ['   Recent Files   '] },
+        \ ]
+
+" Maximum number of MRU entries to show.
+let g:startify_files_number = 5
+
+"  -------------- Git Gutter --------------
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+nmap ) <Plug>(GitGutterNextHunk)
+nmap ( <Plug>(GitGutterPrevHunk)
+
+" Toggle Git Gutter with leader g
+nnoremap <leader>g :GitGutterSignsToggle<CR>
+
+let g:gitgutter_signs = 0
+let g:gitgutter_map_keys = 0
+
+"  -------------- Auto Closing --------------
+" These are the file extensions where this plugin is enabled.
+let g:closetag_filenames = '*.html,*.xhtml,*.jsx,*.js,*.tsx'
+let g:closetag_filetypes = '*.html,*.xhtml,*.jsx,*.js,*.tsx'
+
+" This will make the list of non-closing tags self-closing in the specified files.
+let g:closetag_xhtml_filenames = ''
+let g:closetag_xhtml_filetypes = ''
+
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Disables auto-close if not in a "valid" region (based on filetype)
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+let g:closetag_close_shortcut = '<leader>>'
+
+"  -------------- Fuzzy Finder --------------
+nnoremap <Leader>f :FZF<CR>
