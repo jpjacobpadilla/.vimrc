@@ -194,7 +194,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 "  -------------- Vim Emmet --------------
 let g:user_emmet_settings = {
-\  'variables': {'lang': 'en', 'charset': 'UTF-8', 'title': 'Document'},
+\  'variables': {'lang': 'en', 'charset': 'UTF-8'},
 \  'html': {
 \    'default_attributes': {
 \      'option': {'value': v:null},
@@ -202,14 +202,14 @@ let g:user_emmet_settings = {
 \    },
 \    'snippets': {
 \      'html:5': "<!DOCTYPE html>\n"
-\              ."<html lang=\"${lang}\">\n"
-\              ."<head>\n"
-\              ."\t<meta charset=\"${charset}\">\n"
-\              ."\t<meta name=\"viewport\" content=\"width=, initial-scale=1.0\">\n"
-\              ."\t<title>${title}</title>\n"
-\              ."</head>\n"
-\              ."<body>\n\n</body>\n"
-\              ."</html>",
+\               ."<html lang=\"${lang}\">\n"
+\               ."<head>\n"
+\               ."\t<meta charset=\"${charset}\">\n"
+\               ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\               ."\t<title>${1}</title>\n"
+\               ."</head>\n"
+\               ."<body>\n${1}\n</body>\n"
+\               ."</html>",
 \    },
 \  },
 \}
