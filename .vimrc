@@ -178,6 +178,8 @@ colorscheme dracula
 " Line cursor on insert mode
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
+
+" Combing Git Fugitive with Git Gutter to make one airline section for Git
 function! GitStatus()
   let [a,m,r] = GitGutterGetHunkSummary()
   return printf('+%d ~%d -%d', a, m, r)
