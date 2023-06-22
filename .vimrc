@@ -32,6 +32,7 @@ Plug 'alvan/vim-closetag'
 Plug 'mhinz/vim-startify'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -49,12 +50,24 @@ nnoremap <silent> <leader>h :noh<Bar>:echo<CR>
 nnoremap [m :call search('^\\s*\\(def\\|async def\\|class\\).*:\\s*$', 'bW')<CR>
 nnoremap ]m :call search('^\\s*\\(def\\|async def\\|class\\).*:\\s*$', 'wW')<CR>
 
-" Switch wmndows using ctrl + hjkl
+" Switch windows using ctrl + hjkl in normal mode
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Switch windows using ctrl + hjkl in terminal mode
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+
+" Quit a buffer or terminal
+nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
+tnoremap <leader>q <C-\><C-n>:call QuitOrCloseTerminal()<CR>
+function! QuitOrCloseTerminal()
+  quit!
+endfunction
 " Switch buffers using Ctrl-n and Ctrl-p
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprev<CR>
@@ -64,9 +77,6 @@ nnoremap <Leader>f :FZF<CR>
 
 " Quickly display registers
 nnoremap <Leader>r :reg<CR>
-
-" Close buffer
-nnoremap <leader>q :bd<CR>
 
 " Toggle spell check
 function! ToggleSpell()
@@ -250,3 +260,10 @@ colorscheme dracula
 " Line cursor on insert mode
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+
+let g:airline_section_b = '%{FugitiveStatusline()} %{GitStatus()}'
+
