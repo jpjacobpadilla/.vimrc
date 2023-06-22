@@ -253,7 +253,7 @@ let g:closetag_xhtml_filetypes = ''
 " This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
 let g:closetag_emptyTags_caseSensitive = 1
 
-" Disables auto-close if not in a "valid" region (based on filetype)
+" Disables auto-close if not in a valid region (based on file type)
 let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
     \ 'javascript.jsx': 'jsxRegion',
