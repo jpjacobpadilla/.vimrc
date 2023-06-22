@@ -59,7 +59,11 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 " Quit a buffer or terminal
 function! QuitOrCloseTerminal()
-  quit!
+  if &buftype ==# 'terminal'
+    quit!
+  else
+    quit
+  endif
 endfunction
 
 nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
