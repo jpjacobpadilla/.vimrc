@@ -22,7 +22,6 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'michaeljsmith/vim-indent-object'
-
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -30,13 +29,13 @@ Plug 'Yggdroot/indentLine'
 Plug 'mhinz/vim-startify'
 Plug 'ap/vim-buftabline'
 Plug 'ap/vim-css-color'
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdtree'
-Plug 'preservim/tagbar'
-
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+" Require dependencies
+Plug 'preservim/tagbar' "ctags
 
 call plug#end()
 
