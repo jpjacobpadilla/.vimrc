@@ -46,6 +46,13 @@ nnoremap <silent> <leader>h :noh<Bar>:echo<CR>
 nnoremap [m :call search('^\\s*\\(def\\|async def\\|class\\).*:\\s*$', 'bW')<CR>
 nnoremap ]m :call search('^\\s*\\(def\\|async def\\|class\\).*:\\s*$', 'wW')<CR>
 
+" Switch buffers using Ctrl-n and Ctrl-p
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
+
+" Quickly display registers
+nnoremap <Leader>r :reg<CR>
+
 " Switch windows using ctrl + hjkl in normal mode
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -69,13 +76,6 @@ endfunction
 
 nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
 tnoremap <leader>q <C-\><C-n>:call QuitOrCloseTerminal()<CR>
-
-" Switch buffers using Ctrl-n and Ctrl-p
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
-
-" Quickly display registers
-nnoremap <Leader>r :reg<CR>
 
 " Toggle spell check
 function! ToggleSpell()
