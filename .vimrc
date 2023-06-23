@@ -79,6 +79,9 @@ endfunction
 nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
 tnoremap <leader>q <C-\><C-n>:call QuitOrCloseTerminal()<CR>
 
+" Close current buffer
+nnoremap <leader>c :bd<CR>
+
 " Toggle spell check
 function! ToggleSpell()
   if &spell
