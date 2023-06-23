@@ -67,6 +67,12 @@ tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
 
+" Close current buffer
+nnoremap <leader>c :bd<CR>
+
+" Open a terminal with Leader x
+nnoremap <leader>x :terminal<CR>
+
 " Quit a buffer or terminal
 function! QuitOrCloseTerminal()
   if &buftype ==# 'terminal'
@@ -78,9 +84,6 @@ endfunction
 
 nnoremap <leader>q :call QuitOrCloseTerminal()<CR>
 tnoremap <leader>q <C-\><C-n>:call QuitOrCloseTerminal()<CR>
-
-" Close current buffer
-nnoremap <leader>c :bd<CR>
 
 " Toggle spell check
 function! ToggleSpell()
