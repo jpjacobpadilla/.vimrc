@@ -18,20 +18,23 @@ call plug#begin('~/.vim/plugged')
 " Load plugins
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'preservim/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
-Plug 'ap/vim-buftabline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
-Plug 'mhinz/vim-startify'
 Plug 'michaeljsmith/vim-indent-object'
+
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'Yggdroot/indentLine'
+Plug 'mhinz/vim-startify'
+Plug 'ap/vim-buftabline'
+Plug 'ap/vim-css-color'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
