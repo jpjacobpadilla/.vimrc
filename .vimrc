@@ -23,6 +23,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-buftabline'
@@ -269,3 +270,6 @@ let g:closetag_close_shortcut = '<leader>>'
 
 "  -------------- Fuzzy Finder --------------
 nnoremap <Leader>f :FZF<CR>
+
+"  -------------- Tagbar --------------
+nmap <Leader>t :TagbarToggle<CR>
