@@ -201,6 +201,8 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+let NERDTreeShowHidden=1
+
 "  -------------- Vim Emmet --------------
 let g:user_emmet_settings = {
 \  'variables': {'lang': 'en', 'charset': 'UTF-8'},
