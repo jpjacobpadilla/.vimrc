@@ -105,9 +105,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
-" Auto wrap text when it goes beyond screen length
-set wrap
-
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
 
