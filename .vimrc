@@ -234,7 +234,7 @@ let g:startify_lists = [
         \ ]
 
 " Maximum number of MRU entries to show.
-let g:startify_files_number = 5
+let g:startify_files_number = 10
 
 "  -------------- Git Gutter --------------
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
