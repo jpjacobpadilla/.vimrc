@@ -152,7 +152,10 @@ set splitbelow
 " Allows you to switch between buffers without having to write changes first.
 set hidden
 
-" --------------- Color Scheme ---------------
+" No more text wrapping
+set nowrap
+
+"  --------------- Color Scheme ---------------
 " Fix background: https://sunaku.github.io/vim-256color-bce.html
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
