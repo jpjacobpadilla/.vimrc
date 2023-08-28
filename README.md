@@ -1,3 +1,3 @@
 ```
-curl -o ~/.vimrc jacobpadilla.com/v```
+curl -o ~/.vimrc jacobpadilla.com/v
 ```
