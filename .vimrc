@@ -97,6 +97,9 @@ endfunction
 
 nnoremap <Leader>s :call ToggleSpell()<CR>
 
+" Sudo write shortcut
+command! Sw :w !sudo tee % > /dev/null
+
 " Remove trailing white space on save
 autocmd BufWritePre * :%s/\s\+$//e
 
