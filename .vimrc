@@ -16,28 +16,65 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Load plugins
+
+" Provides mappings to easily delete, change and add surroundings
 Plug 'tpope/vim-surround'
+
+" Enables easy commenting out of code blocks
 Plug 'tpope/vim-commentary'
+
+" Emmet for Vim
 Plug 'mattn/emmet-vim'
+
+" Automatically closes quotes, parenthesis, brackets, etc.
 Plug 'jiangmiao/auto-pairs'
+
+" Automatically closes HTML/XML tags
 Plug 'alvan/vim-closetag'
+
+" Allows text objects to be defined by their indentation
 Plug 'michaeljsmith/vim-indent-object'
+
+" A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
+
+" Vim status bar at bottom of sceen
 Plug 'vim-airline/vim-airline'
+
+" A dark color scheme for Vim
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Displays vertical lines at each indentation level
 Plug 'Yggdroot/indentLine'
+
+" A start screen for Vim
 Plug 'mhinz/vim-startify'
+
+" Lightweight tabline that shows buffer list in the tab line
 Plug 'ap/vim-buftabline'
+
+" Displays CSS colors in the file
 Plug 'ap/vim-css-color'
+
+" Fuzzy file finder that can be used inside Vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" A tree explorer plugin for browsing the file system
 Plug 'preservim/nerdtree'
+
+" Shows a git diff in the left column
 Plug 'airblade/vim-gitgutter'
+
+" A wrapper for Git within Vim
 Plug 'tpope/vim-fugitive'
 
 " Require dependencies
+
+" A plugin that shows you a list of functions/classes
 Plug 'preservim/tagbar' "ctags
 
 call plug#end()
+
 
 let mapleader = " "
 
