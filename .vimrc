@@ -135,6 +135,9 @@ set number relativenumber
 " Ignore case when searching
 set ignorecase
 
+" If you use uppercase letters in search, ignorecase will be ignored!
+set smartcase
+
 " Show matching brackets, parenthesis etc. when the cursor is over them
 set showmatch
 
