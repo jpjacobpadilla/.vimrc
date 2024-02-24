@@ -153,6 +153,9 @@ filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
 
+" Editor lines
+set colorcolumn=79,120
+
 " Set the default tab width to 4 spaces
 set tabstop=4
 
@@ -262,9 +265,9 @@ let g:user_emmet_settings = {
 \               ."\t<title>${1}</title>\n"
 \               ."</head>\n"
 \               ."<body>\n${1}\n</body>\n"
-\               ."</html>",
-\    },
-\  },
+\               ."</html>"
+\    }
+\  }
 \}
 
 "  -------------- Vim Startify --------------
