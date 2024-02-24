@@ -92,17 +92,16 @@ nnoremap <C-p> :bprev<CR>
 " Quickly display registers
 nnoremap <Leader>r :reg<CR>
 
-" Switch windows using ctrl + hjkl in normal mode
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Switch windows using leader + hjkl in normal mode
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
-" Switch windows using ctrl + hjkl in terminal mode
-tnoremap <C-h> <C-w>h
-tnoremap <C-j> <C-w>j
-tnoremap <C-k> <C-w>k
-tnoremap <C-l> <C-w>l
+tnoremap <leader>h <C-\><C-n><C-w>h
+tnoremap <leader>j <C-\><C-n><C-w>j
+tnoremap <leader>k <C-\><C-n><C-w>k
+tnoremap <leader>l <C-\><C-n><C-w>l
 
 " Close current buffer
 nnoremap <leader>c :bd<CR>
