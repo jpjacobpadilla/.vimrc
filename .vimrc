@@ -98,10 +98,10 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
-tnoremap <leader>h <C-\><C-n><C-w>h
-tnoremap <leader>j <C-\><C-n><C-w>j
-tnoremap <leader>k <C-\><C-n><C-w>k
-tnoremap <leader>l <C-\><C-n><C-w>l
+tnoremap <leader>h <C-w>h
+tnoremap <leader>j <C-w>j
+tnoremap <leader>k <C-w>k
+tnoremap <leader>l <C-w>l
 
 " Close current buffer
 nnoremap <leader>c :bd<CR>
