@@ -79,7 +79,7 @@ call plug#end()
 let mapleader = " "
 
 " Use <Space> to clear search highlighting and any message already displayed.
-nnoremap <silent> <C-h> :noh<Bar>:echo<CR>
+nnoremap <silent> <Leader>h :noh<Bar>:echo<CR>
 
 " [m and ]m to jump between python definitions
 nnoremap [m :call search('^\\s*\\(def\\|async def\\|class\\).*:\\s*$', 'bW')<CR>
