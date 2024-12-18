@@ -248,7 +248,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeShowHidden=1
 
-"  -------------- Vim Emmet --------------
+" -------------- Vim Emmet --------------
 let g:user_emmet_settings = {
 \  'variables': {'lang': 'en', 'charset': 'UTF-8'},
 \  'html': {
@@ -265,7 +265,24 @@ let g:user_emmet_settings = {
 \               ."\t<title>${1}</title>\n"
 \               ."</head>\n"
 \               ."<body>\n${1}\n</body>\n"
-\               ."</html>"
+\               ."</html>",
+\      'gf': "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n"
+\           ."<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n"
+\           ."<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&amp;family=DM+Serif+Display&amp;display=swap\" rel=\"stylesheet\">",
+\      'og': "<meta property=\"og:title\" content=\"[title]\">\n"
+\           ."<meta property=\"og:description\" content=\"[description]\">\n"
+\           ."<meta property=\"og:type\" content=\"website\">\n"
+\           ."<meta property=\"og:site_name\" content=\"[site name]\">\n"
+\           ."<meta property=\"og:image\" content=\"[image URL]\">\n"
+\           ."<meta property=\"og:image:alt\" content=\"[image alt]\">\n"
+\           ."<meta property=\"og:image:width\" content=\"[image width]\">\n"
+\           ."<meta property=\"og:image:height\" content=\"[image height]\">\n\n"
+\           ."<meta name=\"twitter:card\" content=\"summary_large_image\">\n"
+\           ."<meta name=\"twitter:title\" content=\"[title]\">\n"
+\           ."<meta name=\"twitter:description\" content=\"[description]\">\n"
+\           ."<meta name=\"twitter:image\" content=\"[image URL]\">\n"
+\           ."<meta name=\"twitter:site\" content=\"@jpjacobpadilla\">\n"
+\           ."<meta name=\"twitter:image:alt\" content=\"[image alt]\">"
 \    }
 \  }
 \}
