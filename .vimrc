@@ -200,6 +200,9 @@ set hidden
 " No more text wrapping
 set nowrap
 
+" No conceal
+set conceallevel=0
+
 "  --------------- Color Scheme ---------------
 " Fix background: https://sunaku.github.io/vim-256color-bce.html
 if &term =~ '256color'
