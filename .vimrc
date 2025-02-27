@@ -92,6 +92,9 @@ nnoremap <C-p> :bprev<CR>
 " Quickly display registers
 nnoremap <Leader>r :reg<CR>
 
+" Toggle between conceal levels (useful for Markdown)
+nnoremap <Leader>C :let &conceallevel = (&conceallevel == 0 ? 1 : 0)<CR>
+
 " Switch windows using option + hjkl in normal mode
 nnoremap ˙ <C-w>h
 nnoremap ∆ <C-w>j
@@ -199,9 +202,6 @@ set hidden
 
 " No more text wrapping
 set nowrap
-
-" No conceal
-set conceallevel=0
 
 "  --------------- Color Scheme ---------------
 " Fix background: https://sunaku.github.io/vim-256color-bce.html
