@@ -27,7 +27,7 @@ compdef _uv_run_mod uv
 # Aliases
 # ------------------------------
 alias sd="cd ~/Desktop/ && cd \"\$(find ~/Desktop/ -type d \( -name 'venv' -o -name '__pycache__' -o -name '.*' \) -prune -o -type d -print | fzf)\""
-
+alias l='curl -s https://api.my-ip.io/v2/ip.txt'
 alias lss='eza -lhF'
 alias path='echo $PATH | tr : "\n"'
 
