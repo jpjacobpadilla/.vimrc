@@ -40,6 +40,10 @@ alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push origin HEAD'
 
+alias tp='terraform plan -out=tfplan.out'
+alias ta='terraform apply tfplan.out'
+
+alias cc='npx claude'
 
 # ------------------------------
 # Prompt Configuration
