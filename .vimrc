@@ -95,17 +95,6 @@ nnoremap <Leader>r :reg<CR>
 " Toggle between conceal levels (useful for Markdown)
 nnoremap <Leader>C :let &conceallevel = (&conceallevel == 0 ? 1 : 0)<CR>
 
-" Switch windows using option + hjkl in normal mode
-nnoremap ˙ <C-w>h
-nnoremap ∆ <C-w>j
-nnoremap ˚ <C-w>k
-nnoremap ¬ <C-w>l
-
-tnoremap ˙ <C-w>h
-tnoremap ∆ <C-w>j
-tnoremap ˚ <C-w>k
-tnoremap ¬ <C-w>l
-
 " Close current buffer
 nnoremap <leader>c :bd<CR>
 
