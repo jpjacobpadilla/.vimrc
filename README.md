@@ -3,12 +3,21 @@ curl -o ~/.vimrc jacobpadilla.com/v
 ```
 
 Some `.zshrc` stuff:
+```
+# ------------------------------
+# Claude Code
+# ------------------------------
+export CLAUDE_TERMINAL_TITLE=0
+```
 
 ```
 # ------------------------------
 # UV
 # ------------------------------
+export UV_PUBLISH_USERNAME="__token__"
+export UV_PUBLISH_PASSWORD="pypi-redacted"
 export PATH="$HOME/.local/bin:$PATH"
+
 autoload -U compinit && compinit
 eval "$(uv generate-shell-completion zsh)"
 
@@ -21,8 +30,9 @@ _uv_run_mod() {
     fi
 }
 compdef _uv_run_mod uv
+```
 
-
+```
 # ------------------------------
 # Aliases
 # ------------------------------
@@ -39,12 +49,32 @@ alias gl='git log --oneline'
 alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push origin HEAD'
+alias gwl='git worktree list'
+# Create a git worktree with a new branch; replaces / with _ in directory name (e.g., feature/foo -> ../feature_foo)
+gwa() { git worktree add -b "$1" "../${1//\//_}"; }
 
 alias tp='terraform plan -out=tfplan.out'
 alias ta='terraform apply tfplan.out'
 
-alias cc='npx claude'
+alias cc='claude'
+```
 
+```
+# ------------------------------
+# Tab Naming
+# ------------------------------
+function set_terminal_title_to_branch() {
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    local branch=$(git branch --show-current 2>/dev/null)
+    echo -ne "\e]0;${branch:-Detached}\a"
+  else
+    echo -ne "\e]0;${PWD##*/}\a"
+  fi
+}
+precmd_functions+=(set_terminal_title_to_branch)
+```
+
+```
 # ------------------------------
 # Prompt Configuration
 # ------------------------------
