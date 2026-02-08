@@ -43,12 +43,14 @@ alias path='echo $PATH | tr : "\n"'
 
 alias d='cd ~/Desktop'
 alias v='vim -c "Startify" -c "normal 0"'
+alias vv='vim'
 alias c='clear'
 
 alias gl='git log --oneline'
 alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push origin HEAD'
+alias gpr='git pull origin main --rebase'
 alias gwl='git worktree list'
 # Create a git worktree with a new branch; replaces / with _ in directory name (e.g., feature/foo -> ../feature_foo)
 gwa() { git worktree add -b "$1" "../${1//\//_}"; }
